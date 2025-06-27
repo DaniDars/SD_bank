@@ -1,8 +1,5 @@
 import { type NextRequest, NextResponse } from "next/server"
-import { faqs } from "@/lib/faqs"
-
-// In-memory view counter (shared with the view route)
-const viewCounts: Record<string, number> = {}
+import { FAQParser } from "@/lib/faq-parser"
 
 export async function GET(request: NextRequest) {
   try {
@@ -11,30 +8,30 @@ export async function GET(request: NextRequest) {
     const search = searchParams.get("search")
     const language = searchParams.get("language") || "pt"
 
-    let filteredFaqs = [...faqs]
+    let faqs = await FAQParser.getFAQsFromSupabase()
 
     // Filter by category
     if (category && category !== "all") {
-      filteredFaqs = filteredFaqs.filter((faq) => faq.category === category)
+      faqs = faqs.filter((faq) => faq.category === category)
     }
 
     // Filter by search term
     if (search) {
       const searchLower = search.toLowerCase()
-      filteredFaqs = filteredFaqs.filter((faq) => {
-        const question = language === "pt" ? faq.question.pt : faq.question.en
-        const answer = language === "pt" ? faq.answer.pt : faq.answer.en
+      faqs = faqs.filter((faq) => {
+        const question = language === "pt" ? faq.question_pt : faq.question_en
+        const answer = language === "pt" ? faq.answer_pt : faq.answer_en
         return question.toLowerCase().includes(searchLower) || answer.toLowerCase().includes(searchLower)
       })
     }
 
-    // Transform for frontend with updated view counts
-    const transformedFAQs = filteredFaqs.map((faq) => ({
+    // Transform for frontend
+    const transformedFAQs = faqs.map((faq) => ({
       id: faq.id,
-      question: language === "pt" ? faq.question.pt : faq.question.en,
-      answer: language === "pt" ? faq.answer.pt : faq.answer.en,
+      question: language === "pt" ? faq.question_pt : faq.question_en,
+      answer: language === "pt" ? faq.answer_pt : faq.answer_en,
       category: faq.category,
-      views: viewCounts[faq.id] || faq.views || 0, // Use updated view count if available
+      views: faq.views,
     }))
 
     return NextResponse.json({

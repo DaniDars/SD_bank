@@ -8,8 +8,8 @@ import { LanguageProvider } from "@/contexts/LanguageContext"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Standard Bank Moçambique - Help Center",
-  description: "Get help with your banking needs through our comprehensive support system at Standard Bank Mozambique.",
+  title: "SecureBank - Help Center",
+  description: "Get help with your banking needs through our comprehensive support system.",
     generator: 'v0.dev'
 }
 
@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${inter.className} bg-gradient-to-br from-blue-50 via-white to-red-50 min-h-screen`}>
+      <body className={`${inter.className} bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50 min-h-screen`}>
         <LanguageProvider>
           <Header />
           <main>{children}</main>

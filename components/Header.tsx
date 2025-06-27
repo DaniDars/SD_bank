@@ -23,11 +23,11 @@ export default function Header() {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-2">
-            <div className="bg-gradient-to-r from-blue-600 to-red-600 p-2 rounded-lg">
+            <div className="bg-gradient-to-r from-purple-600 to-pink-600 p-2 rounded-lg">
               <Building2 className="h-6 w-6 text-white" />
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-red-600 bg-clip-text text-transparent">
-              Standard Bank Moçambique
+            <span className="text-xl font-bold bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+              SecureBank Moçambique
             </span>
           </Link>
 
@@ -42,7 +42,7 @@ export default function Header() {
                   key={item.href}
                   href={item.href}
                   className={`flex items-center space-x-1 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                    isActive ? "text-blue-600 bg-blue-50" : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                    isActive ? "text-purple-600 bg-purple-50" : "text-gray-600 hover:text-purple-600 hover:bg-purple-50"
                   }`}
                 >
                   <Icon className="h-4 w-4" />
@@ -80,7 +80,7 @@ export default function Header() {
                 key={item.href}
                 href={item.href}
                 className={`flex items-center space-x-2 px-3 py-2 rounded-md text-base font-medium ${
-                  isActive ? "text-blue-600 bg-blue-50" : "text-gray-600 hover:text-blue-600 hover:bg-blue-50"
+                  isActive ? "text-purple-600 bg-purple-50" : "text-gray-600 hover:text-purple-600 hover:bg-purple-50"
                 }`}
               >
                 <Icon className="h-5 w-5" />

@@ -52,9 +52,6 @@ export interface Translations {
       cards: string
       loans: string
       payments: string
-      digital: string
-      investment: string
-      general: string
     }
     noResults: string
     clearFilters: string
@@ -85,9 +82,11 @@ export interface Translations {
         login: string
         other: string
       }
-      fullNamePlaceholder: string
-      emailPlaceholder: string
-      messagePlaceholder: string
+      placeholders: {
+        fullName: string
+        email: string
+        message: string
+      }
       validation: {
         nameRequired: string
         emailRequired: string
@@ -142,7 +141,7 @@ export const translations: Record<Language, Translations> = {
       support: "Suporte",
     },
     landing: {
-      title: "Bem-vindo ao Centro de Ajuda do Standard Bank Moçambique",
+      title: "Bem-vindo ao Centro de Ajuda do SecureBank Moçambique",
       subtitle:
         "Estamos aqui para ajudá-lo com todas as suas necessidades bancárias em Moçambique. Escolha como gostaria de obter suporte hoje.",
       startChat: {
@@ -166,7 +165,7 @@ export const translations: Record<Language, Translations> = {
       },
     },
     chat: {
-      title: "Chat de Suporte Standard Bank",
+      title: "Chat de Suporte SecureBank",
       subtitle: "Normalmente respondemos instantaneamente",
       placeholder: "Digite sua mensagem...",
       typing: "IA está digitando...",
@@ -180,9 +179,6 @@ export const translations: Record<Language, Translations> = {
         cards: "Cartões",
         loans: "Empréstimos",
         payments: "Pagamentos",
-        digital: "Digital",
-        investment: "Investimentos",
-        general: "Geral",
       },
       noResults: "Nenhuma FAQ encontrada com seus critérios de pesquisa.",
       clearFilters: "Limpar pesquisa e filtros",
@@ -212,9 +208,11 @@ export const translations: Record<Language, Translations> = {
           login: "Problemas de Login",
           other: "Outro",
         },
-        fullNamePlaceholder: "Digite seu nome completo",
-        emailPlaceholder: "Digite seu endereço de email",
-        messagePlaceholder: "Por favor, descreva seu problema em detalhes...",
+        placeholders: {
+          fullName: "Digite seu nome completo",
+          email: "Digite seu endereço de email",
+          message: "Por favor, descreva seu problema em detalhes...",
+        },
         validation: {
           nameRequired: "Nome completo é obrigatório",
           emailRequired: "Email é obrigatório",
@@ -265,7 +263,7 @@ export const translations: Record<Language, Translations> = {
       support: "Support",
     },
     landing: {
-      title: "Welcome to Standard Bank Mozambique Help Center",
+      title: "Welcome to SecureBank Mozambique Help Center",
       subtitle:
         "We're here to help you with all your banking needs in Mozambique. Choose how you'd like to get support today.",
       startChat: {
@@ -289,7 +287,7 @@ export const translations: Record<Language, Translations> = {
       },
     },
     chat: {
-      title: "Standard Bank Support Chat",
+      title: "SecureBank Support Chat",
       subtitle: "We typically reply instantly",
       placeholder: "Type your message...",
       typing: "AI is typing...",
@@ -303,9 +301,6 @@ export const translations: Record<Language, Translations> = {
         cards: "Cards",
         loans: "Loans",
         payments: "Payments",
-        digital: "Digital",
-        investment: "Investments",
-        general: "General",
       },
       noResults: "No FAQs found matching your search criteria.",
       clearFilters: "Clear search and filters",
@@ -334,9 +329,11 @@ export const translations: Record<Language, Translations> = {
           login: "Login Problems",
           other: "Other",
         },
-        fullNamePlaceholder: "Enter your full name",
-        emailPlaceholder: "Enter your email address",
-        messagePlaceholder: "Please describe your issue in detail...",
+        placeholders: {
+          fullName: "Enter your full name",
+          email: "Enter your email address",
+          message: "Please describe your issue in detail...",
+        },
         validation: {
           nameRequired: "Full name is required",
           emailRequired: "Email is required",
